@@ -39,7 +39,8 @@ git merge name
 ### 删除分支
 git branch -d name
 
-# 删除远程分支
+### 删除远程分支
+
 git push origin --delete [branch-name]
 git branch -dr [remote/branch]
 
