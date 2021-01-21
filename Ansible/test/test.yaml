@@ -1,0 +1,22 @@
+---
+ - hosts: localhost
+   vars_files:
+     - "host.yaml"
+     - "server.yaml"
+   remote_user: root
+   #gather_facts: no
+   #roles:
+   #  - role: base
+
+   tasks:
+     - name: test
+       command: echo aaaaa
+     - name: var_host
+       command: echo {{ var_test }}
+     - name: var_server
+       command: echo {{ var_test_server }}
+     - name: ip
+       command: echo {{ ansible_all_ipv4_addresses }}
+     - name: copy test
+       template: src=test.conf dest=/mnt/test.conf
+

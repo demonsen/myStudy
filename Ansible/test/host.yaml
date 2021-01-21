@@ -1,0 +1,6 @@
+---
+#######BEGIN: SETTING: BASIC#########
+var_ntp_server: cn.pool.ntp.org
+var_test: aaabbbcc
+
+#######END  : SETTING: BASIC#########

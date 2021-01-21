@@ -1,0 +1,44 @@
+---
+- name: install software  epel-release
+  yum: name={{ item }} state=present
+  with_items:
+    - epel-release
+    - lrzsz
+    - net-tools
+    - ntpdate
+    - sysstat
+    - mtr
+    
+- name: crontab time
+  cron: minute=1 job="/usr/sbin/ntpdate -s {{ var_ntp_server }}" name=synctime state=present
+
+
+- name: copy hosts
+  copy: src=hosts dest=/etc/hosts
+
+- name: copy profile op
+  copy: src=op.sh dest=/etc/profile.d/op.sh
+#  notitfy: export profile op
+
+- name: zabbix_agents install
+  command: echo {{ var_zabbix_server }}
+
+
+#handlers:
+#  - name: export profile op
+    
+- name: disk xfs filesystem
+  filesystem:
+    fstype: xfs
+    dev: /dev/sdb
+
+- name: mount disk
+  mount:
+    fstype: xfs
+    src: /dev/sdb
+    path: /data
+    state: mounted
+
+
+
+

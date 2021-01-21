@@ -1,0 +1,11 @@
+---
+ - hosts: localhost
+   vars_files:
+     - "host.yaml"
+     - "server.yaml"
+   remote_user: root
+   gather_facts: no
+   roles:
+     - role: base
+
+
