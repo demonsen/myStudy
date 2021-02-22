@@ -8,6 +8,8 @@
     - ntpdate
     - sysstat
     - mtr
+    - telnet
+
     
 - name: crontab time
   cron: minute=1 job="/usr/sbin/ntpdate -s {{ var_ntp_server }}" name=synctime state=present
