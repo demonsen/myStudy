@@ -7,6 +7,6 @@ def prime(N):
         else:
             yield i 
 
-i=prime(200)
-while True:
-    print(next(i))
+s = prime(200)
+for i in s:
+    print(i)

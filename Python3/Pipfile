@@ -9,6 +9,12 @@ verify_ssl = true
 [packages]
 numpy = "*"
 matplotlib = "*"
+seaborn = "*"
+requests = "*"
+redis = "*"
+pygame = "*"
+pyyaml = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.6"
